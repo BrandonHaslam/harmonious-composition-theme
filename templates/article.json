@@ -57,7 +57,7 @@
         "text_PNHnVB": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "<strong>{{ article.metafields.custom.poc_image_banner.value.text_single.value }}</strong>",
             "text_style": "body"
           }
         },
