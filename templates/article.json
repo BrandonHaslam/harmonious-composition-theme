@@ -106,7 +106,7 @@
         "text_MJY4K9": {
           "type": "text",
           "settings": {
-            "text": "{{ article.metafields.custom.sections | metafield_text: field: 'heading' }}",
+            "text": "{{ article.metafields.custom.poc_image_banner_2.value.text_single.value }}",
             "text_style": "body"
           }
         },
@@ -128,6 +128,8 @@
         "buttons_nU6Vf4"
       ],
       "settings": {
+        "image": "{{ article.metafields.custom.poc_image_banner_2.value.first_image.value }}",
+        "image_2": "{{ article.metafields.custom.poc_image_banner_2.value.second_image.value }}",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "desktop_content_position": "middle-center",
