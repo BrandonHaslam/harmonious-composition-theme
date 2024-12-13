@@ -106,7 +106,7 @@
         "text_MJY4K9": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "{{ article.metafields.custom.sections | metafield_text: field: 'heading' }}",
             "text_style": "body"
           }
         },
