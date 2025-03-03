@@ -49,9 +49,9 @@
             "text_BJrPpR": {
               "type": "text",
               "settings": {
-                "text": "{{ closest.metaobject.fifty_fifty.title | metafield_tag }}",
+                "text": "<p>{{ closest.metaobject.fifty_fifty.title | metafield_tag }}</p>",
                 "alignment": "left",
-                "toggle_font": false,
+                "toggle_font": true,
                 "italic_color": "#334fb4",
                 "toggle_bottom_border": true,
                 "toggle_top_border": true
