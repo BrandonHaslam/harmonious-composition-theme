@@ -17,6 +17,7 @@
     text-block text-{{ block.settings.alignment }} w-full font-serif border-black
     {% if block.settings.toggle_bottom_border %} border-b padding-b-4{% endif %}
     {% if block.settings.toggle_top_border %} border-t padding-t-4{% endif %}
+  {% if block.settings.toggle_font %}font-serif{% endif %}
   "
 >
   {{ block.settings.text }}
