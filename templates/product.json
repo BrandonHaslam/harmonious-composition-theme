@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "fifty_fifty_3dREmX": {
       "type": "fifty-fifty",
@@ -49,9 +49,9 @@
             "text_BJrPpR": {
               "type": "text",
               "settings": {
-                "text": "<p>{{ closest.metaobject.fifty_fifty.title | metafield_tag }}</p>",
+                "text": "{{ closest.metaobject.fifty_fifty.title | metafield_tag }}",
                 "alignment": "left",
-                "toggle_font": true,
+                "toggle_font": false,
                 "italic_color": "#334fb4",
                 "toggle_bottom_border": true,
                 "toggle_top_border": true
@@ -64,7 +64,7 @@
                 "alignment": "left",
                 "toggle_font": false,
                 "italic_color": "",
-                "toggle_bottom_border": true,
+                "toggle_bottom_border": false,
                 "toggle_top_border": false
               }
             },
@@ -73,7 +73,7 @@
               "settings": {
                 "text": "",
                 "alignment": "left",
-                "toggle_font": false,
+                "toggle_font": true,
                 "italic_color": "",
                 "toggle_bottom_border": false,
                 "toggle_top_border": false
