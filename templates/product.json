@@ -49,9 +49,9 @@
             "text_BJrPpR": {
               "type": "text",
               "settings": {
-                "text": "<p>{{ closest.metaobject.fifty_fifty.title | metafield_tag }}</p>",
+                "text": "{{ closest.metaobject.fifty_fifty.title | metafield_tag }}",
                 "alignment": "left",
-                "toggle_font": true,
+                "toggle_font": false,
                 "italic_color": "#334fb4",
                 "toggle_bottom_border": true,
                 "toggle_top_border": true
@@ -318,8 +318,8 @@
   },
   "order": [
     "fifty_fifty_3dREmX",
-    "main",
     "image-with-text",
+    "main",
     "multicolumn",
     "related-products"
   ]
