@@ -71,7 +71,11 @@
                     class="image-with-text__heading inline-richtext {{ block.settings.heading_size }}"
                     {{ block.shopify_attributes }}
                   >
-                    {{ block.settings.heading }}
+                    {{ block.settings.heading | metafield_tag }}
+                    -- {{ block.settings.heading | json }} -- json
+                    {% for value in block.settings.heading %}
+                      {{ value }}
+                    {% endfor %}
                   </h2>
                 {%- when 'caption' -%}
                   <p
@@ -327,7 +331,6 @@
     {
       "type": "heading",
       "name": "t:sections.image-with-text.blocks.heading.name",
-      "limit": 1,
       "settings": [
         {
           "type": "inline_richtext",

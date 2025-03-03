@@ -1,0 +1,76 @@
+{% stylesheet %}
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+{% endstylesheet %}
+
+<div
+  class="
+    text-block text-{{ block.settings.alignment }} w-full font-serif border-black
+    {% if block.settings.toggle_bottom_border %} border-b padding-b-4{% endif %}
+    {% if block.settings.toggle_top_border %} border-t padding-t-4{% endif %}
+  "
+>
+  {{ block.settings.text }}
+  {{ block.settings.italic_color }}
+</div>
+<style>
+  .text-block em {
+    color: {{ block.settings.italic_color }};
+    font-style: normal;
+  }
+</style>
+{% schema %}
+{
+  "name": "Text",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Alignment"
+    },
+    {
+      "type": "checkbox",
+      "id": "toggle_font",
+      "label": "Toggle Font"
+    },
+    {
+      "type": "color",
+      "id": "italic_color",
+      "label": "Italic color"
+    },
+    {
+      "type": "checkbox",
+      "id": "toggle_bottom_border",
+      "label": "Toggle bottom_border"
+    },
+    {
+      "type": "checkbox",
+      "id": "toggle_top_border",
+      "label": "Toggle top_border"
+    }
+  ],
+  "presets": [
+    { "name": "Text" },
+    {
+      "name": "Content",
+      "settings": {
+        "text": "<p>Hello, world!</p>"
+      }
+    }
+  ]
+}
+{% endschema %}

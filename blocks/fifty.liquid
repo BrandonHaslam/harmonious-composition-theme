@@ -1,0 +1,69 @@
+<div
+  class="group-block color-{{ block.settings.color_scheme }} relative flex flex-col justify-center content-center margin-x-auto {% unless block.settings.disable_padding %} max-w-2xl {% endunless %}"
+>
+  <h2 class="absolute top-0 right-0">{{ block.settings.title }}</h2>
+  {% content_for 'blocks' %}
+</div>
+<style>
+  .fifty {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+    position: relative;
+  }
+</style>
+{% schema %}
+{
+  "name": "Fifty",
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "class": "fifty",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Block title"
+    },
+    {
+      "type": "metaobject",
+      "id": "my_material_setting",
+      "label": "Material",
+      "metaobject_type": "fifty_fifty"
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_padding",
+      "label": "Disable Padding",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fifty"
+    },
+    {
+      "name": "Column",
+      "settings": {
+        "color_scheme": "scheme-3"
+      },
+      "blocks": [
+        {
+          "type": "media"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

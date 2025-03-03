@@ -1,0 +1,110 @@
+<div
+  class="
+    media-block media-{{ block.settings.media_position }} text-{{ block.settings.alignment }} text-{{ block.settings.text_size }}
+    w-full
+  "
+>
+  {% if block.settings.video != blank %}
+    <video controls>
+      <source src="{{ block.settings.video }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  {% elsif block.settings.image != blank %}
+    <img
+      class="object-fill"
+      src="{{ block.settings.image | image_url: width: 1000, height: 1000 }}"
+      width="800"
+      height="800"
+      alt="{{ block.settings.alt_text }}"
+    >
+  {% endif %}
+
+  {% if block.settings.caption != blank %}
+    <p class="caption">{{ block.settings.caption }}</p>
+  {% endif %}
+
+  {% if block.settings.link != blank %}
+    <a href="{{ block.settings.link }}" class="media-link">Learn more</a>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Media",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Alt Text",
+      "info": "Alternative text for images"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption",
+      "info": "Optional text below media"
+    },
+    {
+      "type": "select",
+      "id": "media_position",
+      "label": "Media Position",
+      "options": [
+        { "value": "left", "label": "Left of Text" },
+        { "value": "right", "label": "Right of Text" },
+        { "value": "above", "label": "Above Text" },
+        { "value": "below", "label": "Below Text" }
+      ],
+      "default": "above"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Text Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media Default"
+    },
+    {
+      "name": "Media with Large Text",
+      "settings": {
+        "text_size": "large"
+      }
+    },
+    {
+      "name": "Media Left",
+      "settings": {
+        "media_position": "left"
+      }
+    },
+    {
+      "name": "Media Right",
+      "settings": {
+        "media_position": "right"
+      }
+    }
+  ]
+}
+{% endschema %}
