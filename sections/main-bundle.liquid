@@ -1,0 +1,22 @@
+<form action="/cart/add" method="post">
+  {% for item in product.metafields.custom.bundle_items.value %}
+    <input type="hidden" name="items[{{ forloop.index0 }}][id]" value="{{ item.variants[0].id }}">
+    <input type="hidden" name="items[{{ forloop.index0 }}][properties][_bundleId]" value="{{ product.id }}">
+    <input
+      type="hidden"
+      name="items[{{ forloop.index0 }}][properties][_bundleVariantId]"
+      value="{{ product.variants[0].id }}"
+    >
+  {% endfor %}
+  <button type="submit">Add to cart</button>
+</form>
+{% schema %}
+{
+  "name": "Main Bundle",
+  "presets": [
+    {
+      "name": "Main Bundle"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,36 @@
+<div
+  class="group-block color-{{ block.settings.color_scheme }} grid grid-cols-1 md:grid-cols-2"
+>
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "Fifty Fifty",
+  "blocks": [{ "type": "fifty" }],
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "metaobject",
+      "id": "my_material_setting",
+      "label": "Material",
+      "metaobject_type": "fifty_fifty"
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fifty Fifty"
+    }
+  ]
+}
+{% endschema %}
